@@ -119,11 +119,11 @@ proc draw_bubble {txt} {
     .c create oval 0 -3 6 3 -width 2 -tags $tag
     return [list $tag 6 0]
   }
-  if {[regexp {^/[a-z]} $txt]} {
+  if {[regexp {^/[[:alpha:]]} $txt]} {
     set txt [string range $txt 1 end]
     set font $::font2
     set istoken 1
-  } elseif {[regexp {^[a-z]} $txt]} {
+  } elseif {[regexp {^[[:alpha:]]} $txt]} {
     set font $::font2
     set istoken 0
   } else {
