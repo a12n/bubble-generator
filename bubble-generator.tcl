@@ -119,7 +119,7 @@ proc draw_bubble {txt} {
     .c create oval 0 -3 6 3 -width 2 -tags $tag
     return [list $tag 6 0]
   }
-  set isregexp 0
+  set ischarset 0
   if {[regexp {^/[[:alpha:]]} $txt]} {
     set txt [string range $txt 1 end]
     set font $::font2
@@ -148,7 +148,7 @@ proc draw_bubble {txt} {
   set tag2 x$tagcnt-box
   set tags [list $tag $tag2]
   if {$istoken} {
-    if {$isregexp} {
+    if {$ischarset} {
       .c create line $left $btm [expr {$left-$rad}] [expr {($btm+$top)/2}] \
           $left $top -width 2 -tags $tags
       .c create line $right $btm [expr {$right+$rad}] [expr {($btm+$top)/2}] \
