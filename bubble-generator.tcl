@@ -4,7 +4,7 @@
 # text descriptions.
 #
 
-source [file join [file dirname [info script]] bubble-generator-data.tcl]
+source [lindex $argv 0]
 
 # Top-level displays
 #
