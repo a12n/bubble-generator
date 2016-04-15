@@ -119,6 +119,7 @@ proc draw_bubble {txt} {
     .c create oval 0 -3 6 3 -width 2 -tags $tag
     return [list $tag 6 0]
   }
+  set isregexp 0
   if {[regexp {^/[[:alpha:]]} $txt]} {
     set txt [string range $txt 1 end]
     set font $::font2
@@ -147,10 +148,17 @@ proc draw_bubble {txt} {
   set tag2 x$tagcnt-box
   set tags [list $tag $tag2]
   if {$istoken} {
-    .c create arc [expr {$left-$rad}] $top [expr {$left+$rad}] $btm \
-         -width 2 -start 90 -extent 180 -style arc -tags $tags
-    .c create arc [expr {$right-$rad}] $top [expr {$right+$rad}] $btm \
-         -width 2 -start -90 -extent 180 -style arc -tags $tags
+    if {$isregexp} {
+      .c create line $left $btm [expr {$left-$rad}] [expr {($btm+$top)/2}] \
+          $left $top -width 2 -tags $tags
+      .c create line $right $btm [expr {$right+$rad}] [expr {($btm+$top)/2}] \
+          $right $top -width 2 -tags $tags
+    } else {
+      .c create arc [expr {$left-$rad}] $top [expr {$left+$rad}] $btm \
+          -width 2 -start 90 -extent 180 -style arc -tags $tags
+      .c create arc [expr {$right-$rad}] $top [expr {$right+$rad}] $btm \
+          -width 2 -start -90 -extent 180 -style arc -tags $tags
+    }
     if {$left<$right} {
       .c create line $left $top $right $top -width 2 -tags $tags
       .c create line $left $btm $right $btm -width 2 -tags $tags
