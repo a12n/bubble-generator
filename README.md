@@ -16,7 +16,7 @@ Allow single quote/brace tokens in the description:
         line "\"" {toploop {optx char}} "\""
     }
 
-![](raw/default/examples/string.gif)
+![](examples/string.gif)
 
 Original generator fails to process `"`, `{` and `}` tokens.
 
@@ -29,7 +29,7 @@ figure:
         line [A-Za-z0-9_]
     }
 
-![](raw/default/examples/char.gif)
+![](examples/char.gif)
 
 To have a `[` string token in the diagram escape it with `/`:
 
@@ -37,7 +37,7 @@ To have a `[` string token in the diagram escape it with `/`:
         line /[ {toploop string ;} ]
     }
 
-![](raw/default/examples/list.gif)
+![](examples/list.gif)
 
 [Syntax diagram]: https://en.wikipedia.org/wiki/Syntax_diagram
 [SQLite]: http://www.sqlite.org/docsrc/dir?ci=3d991d2d4e9a4901&name=art/syntax
