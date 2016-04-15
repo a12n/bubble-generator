@@ -42,6 +42,14 @@ set VSEP 9                        ;# vertical separation
 set DPI 80                       ;# dots per inch
 
 
+proc safe_llength {lst} {
+    if {$lst eq "\"" || $lst eq "{" || $lst eq "}"} {
+        return 1
+    } else {
+        return [llength $lst]
+    }
+}
+
 # Draw a right-hand turn around.  Approximately a ")"
 #
 proc draw_right_turnback {tag x y0 y1} {
@@ -599,7 +607,7 @@ proc draw_tail_branch {lx} {
 }
 
 proc draw_diagram {spec} {
-  set n [llength $spec]
+  set n [safe_llength $spec]
   if {$n==1} {
     return [draw_bubble $spec]
   }
@@ -719,7 +727,7 @@ proc draw_all_graphs {} {
 proc walk_graph_extract_names {graph varname} {
   upvar 1 $varname v
   foreach x $graph {
-    set n [llength $x]
+    set n [safe_llength $x]
     if {$n>1} {
       walk_graph_extract_names $x v
     } elseif {[regexp {^[a-z]} $x]} {
