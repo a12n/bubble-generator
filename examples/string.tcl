@@ -1,4 +1,8 @@
 set all_graphs {
+    list {
+        line /[ {toploop {optx string} ;} ]
+    }
+
     string {
         line "\"" {toploop {optx char}} "\""
     }
