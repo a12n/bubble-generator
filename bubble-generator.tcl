@@ -62,7 +62,7 @@ proc draw_right_turnback {tag x y0 y1} {
     }
     .c create arc $xr0 [expr {$y1-2*$RADIUS}] $xr1 $y1 \
           -width 2 -start 0 -extent -90 -tags $tag -style arc
-  } else { 
+  } else {
     set r [expr {($y1-$y0)/2.0}]
     set x0 [expr {$x-$r}]
     set x1 [expr {$x+$r}]
@@ -97,7 +97,7 @@ proc draw_left_turnback {tag x y0 y1 dir} {
     # .c create line $xr0 $yr0 $xr0 $yr1 -width 2 -tags $tag
     .c create arc $xr0 [expr {$y1-2*$RADIUS}] $xr1 $y1 \
           -width 2 -start 180 -extent 90 -tags $tag -style arc
-  } else { 
+  } else {
     set r [expr {($y1-$y0)/2.0}]
     set x0 [expr {$x-$r}]
     set x1 [expr {$x+$r}]
@@ -106,7 +106,7 @@ proc draw_left_turnback {tag x y0 y1 dir} {
   }
 }
 
-# Draw a bubble containing $txt. 
+# Draw a bubble containing $txt.
 #
 proc draw_bubble {txt} {
   global tagcnt
@@ -195,7 +195,7 @@ proc draw_line {lx} {
     .c addtag $tag withtag $t
     .c dtag $t $t
   }
-  if {$exx==0} {	
+  if {$exx==0} {
     set exx [expr {$sep*2}]
     .c create line 0 0 $sep 0 -width 2 -tags $tag -arrow last
     .c create line $sep 0 $exx 0 -width 2 -tags $tag
@@ -481,7 +481,7 @@ proc draw_or {lx} {
   }
 
   set x0 0                        ;# entry x
-  set x1 $sep                     ;# decender 
+  set x1 $sep                     ;# decender
   set x2 [expr {$sep*2}]          ;# start of choice
   set xc [expr {$mxw/2}]          ;# center point
   set x3 [expr {$mxw+$x2}]        ;# end of choice
@@ -534,7 +534,7 @@ proc draw_or {lx} {
     .c addtag $tag withtag $t
     .c dtag $t $t
   }
-  return [list $tag $x5 $exy]   
+  return [list $tag $x5 $exy]
 }
 
 proc draw_tail_branch {lx} {
@@ -551,7 +551,7 @@ proc draw_tail_branch {lx} {
   }
 
   set x0 0                        ;# entry x
-  set x1 $sep                     ;# decender 
+  set x1 $sep                     ;# decender
   set x2 [expr {$sep*2}]          ;# start of choice
 
   for {set i 0} {$i<$n} {incr i} {
