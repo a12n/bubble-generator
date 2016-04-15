@@ -1,0 +1,6 @@
+syntax: glob
+
+*.gif
+*.ps
+all.html
+syntax_linkage.tcl
