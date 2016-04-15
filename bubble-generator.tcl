@@ -1,4 +1,4 @@
-#!/bin/wish
+#!/usr/bin/env wish
 #
 # Run this wish script to generate syntax bubble diagrams from
 # text descriptions.
