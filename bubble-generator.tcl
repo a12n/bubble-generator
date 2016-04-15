@@ -587,7 +587,11 @@ proc draw_tail_branch {lx} {
 }
 
 proc draw_diagram {spec} {
-  set n [llength $spec]
+  if {$spec eq "\"" || $spec eq "{" || $spec eq "}"} {
+    set n 1
+  } else {
+    set n [llength $spec]
+  }
   if {$n==1} {
     return [draw_bubble $spec]
   }
