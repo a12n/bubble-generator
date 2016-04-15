@@ -120,13 +120,17 @@ proc draw_bubble {txt} {
     return [list $tag 6 0]
   }
   set ischarset 0
-  if {[regexp {^/[[:alpha:]]} $txt]} {
+  if {[regexp {^/[[:alpha:]\[]} $txt]} {
     set txt [string range $txt 1 end]
     set font $::font2
     set istoken 1
   } elseif {[regexp {^[[:alpha:]]} $txt]} {
     set font $::font2
     set istoken 0
+  } elseif {[regexp {^\[.*\]$} $txt]} {
+    set font $::font2
+    set istoken 1
+    set ischarset 1
   } else {
     set font $::font1
     set istoken 1
