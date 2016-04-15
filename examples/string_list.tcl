@@ -1,6 +1,6 @@
 set all_graphs {
     list {
-        line /[ {toploop {optx string} ;} ]
+        line /[ {toploop string ;} ]
     }
 
     string {
