@@ -2,7 +2,7 @@
 
 ## Syntax description from arbitrary file
 
-Path to a syntax description file should be spcified in the command
+Path to a syntax description file should be specified in the command
 line.
 
 Original generator reads syntax diagram description from
