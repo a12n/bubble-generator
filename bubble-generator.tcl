@@ -677,7 +677,7 @@ proc draw_graph {name spec {do_xv 1}} {
   .c lower bgrect
   .c config -width $x1 -height $y1
   update
-  .c postscript -file $name.ps -width [expr {$x1+2}] -height [expr {$y1+2}]
+  .c postscript -file $name.eps -width [expr {$x1+2}] -height [expr {$y1+2}]
   global DPI
   .c delete bgrect
   exec convert -density ${DPI}x$DPI -antialias $name.ps $name.gif
