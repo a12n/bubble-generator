@@ -680,7 +680,7 @@ proc draw_graph {name spec {do_xv 1}} {
   .c postscript -file $name.eps -width [expr {$x1+2}] -height [expr {$y1+2}]
   global DPI
   .c delete bgrect
-  exec convert -density ${DPI}x$DPI -antialias $name.ps $name.gif
+  exec convert -density ${DPI}x$DPI -antialias $name.eps $name.gif
   if {$do_xv} {
     if {[catch {exec xv $name.gif &}]} {
       exec display $name.gif &
