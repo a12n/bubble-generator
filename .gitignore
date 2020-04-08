@@ -1,5 +1,3 @@
-syntax: glob
-
 *.gif
 *.ps
 all.html
